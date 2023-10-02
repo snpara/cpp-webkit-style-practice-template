@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.27)
 
 project(
-    "OpenGLTemplate"
+    "CppTemplate"
     VERSION 1.0.0
     LANGUAGES C CXX)
 
@@ -17,7 +17,7 @@ option(ENABLE_WARNINGS "Enable to add warnings to a target." ON)
 option(ENABLE_WARNINGS_AS_ERRORS "Enable to treat warnings as errors." ON)
 
 option(ENABLE_TESTING "Enable a Unit Testing build." ON)
-option(ENABLE_COVERAGE "Enable a Code Coverage build." ON)
+option(ENABLE_COVERAGE "Enable a Code Coverage build." OFF)
 
 option(ENABLE_CLANG_TIDY "Enable to add clang tidy." ON)
 
@@ -37,6 +37,8 @@ include(ConfigSafeGuards)
 include(AddGitSubmodule)
 include(Docs)
 include(Tools)
+
+set(CMAKE_XCODE_BINARY_DIR ${PROJECT_SOURCE_DIR}/build-xcode)
 
 if(ENABLE_WARNINGS)
     include(Warnings)

@@ -10,6 +10,7 @@ CMakeUserPresets.json
 ########### FOLDERS ############
 ################################
 build/
+build-xcode/
 html/
 lectures/
 

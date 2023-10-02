@@ -6,6 +6,13 @@ install:
 prepare:
 	rm -rf build
 	mkdir build
+	rm -rf build-xcode
+	mkdir build-xcode
+
+xcode:
+	rm -rf build-xcode
+	mkdir build-xcode
+	/usr/local/bin/cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE -DCMAKE_C_COMPILER:FILEPATH=/usr/bin/clang -DCMAKE_CXX_COMPILER:FILEPATH=/usr/bin/clang++ -S. -B./build-xcode -GXcode
 
 conan_d:
 	rm -rf build
