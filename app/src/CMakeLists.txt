@@ -1,6 +1,7 @@
 set(APP_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/main.cpp")
+set(APP_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/header.h")
 
-add_executable(${EXECUTABLE_NAME} ${APP_SOURCES})
+add_executable(${EXECUTABLE_NAME} ${APP_SOURCES} ${APP_HEADERS})
 
 if(${ENABLE_WARNINGS})
     target_set_warnings(
